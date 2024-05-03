@@ -7,6 +7,9 @@ public class OrderRepository {
 
 	@Autowired
 	MongoTemplate mongoTemplate;
-	
+
 	// TODO: Task 5
+	public void insertOrder(String orderJSONString, String collectionName){
+		
+	}
 }

@@ -5,3 +5,5 @@ MYSQLHOST=monorail.proxy.rlwy.net
 MYSQLUSER=root
 MYSQLPASSWORD=TJEIgxIrPJGrfOhlRzOKtJsDruRUzIUI
 MYSQLPORT=38345
+
+set MONGO_URL=mongodb://mongo:gijLSPORgBkMMlHuNMRLzrNMaPGCgbXx@viaduct.proxy.rlwy.net:14525

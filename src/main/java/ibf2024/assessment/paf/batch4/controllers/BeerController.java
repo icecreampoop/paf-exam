@@ -1,6 +1,9 @@
 package ibf2024.assessment.paf.batch4.controllers;
 
+import java.math.BigInteger;
+import java.time.LocalDate;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import ibf2024.assessment.paf.batch4.models.Brewery;
 import ibf2024.assessment.paf.batch4.repositories.BeerRepository;
+import ibf2024.assessment.paf.batch4.services.BeerService;
 
 @Controller
 @RequestMapping
@@ -22,6 +26,9 @@ public class BeerController {
 
 	@Autowired
 	BeerRepository beerRepo;
+
+	@Autowired
+	BeerService beerSvc;
 
 	//TODO HANDLE IF NO BREWERY/NOBEER ETC FOUND ALL
 
@@ -57,13 +64,9 @@ public class BeerController {
 	
 	//TODO Task 5 - view 2, place order 
 	@PostMapping(path = "/brewery/{id}/order")
-	public String processOrder(Model model, @RequestBody MultiValueMap<String,Integer> form) {
+	public String processOrder(Model model, @RequestBody MultiValueMap<String,Integer> form) { 
 
-		System.out.println(form.size());
-		for (String x : form.keySet()){
-			System.out.println("key : " + x);
-			System.out.println(form.get(x));
-		}
+		model.addAttribute("orderNumber", beerSvc.placeOrder(form));
 		
 		return "view3";
 	}
