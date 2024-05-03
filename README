@@ -1,0 +1,7 @@
+connecting to railway db on local works but docker does not deploy properly on railway
+
+MYSQLDATABASE=brewerydb
+MYSQLHOST=monorail.proxy.rlwy.net
+MYSQLUSER=root
+MYSQLPASSWORD=TJEIgxIrPJGrfOhlRzOKtJsDruRUzIUI
+MYSQLPORT=38345
